@@ -1,7 +1,5 @@
 package EhoServer;
 
-import Actions.Actions;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,15 +19,10 @@ public class EhoServer {
         return new EhoServer(port);
     }
     public void run(){
-        //создаем объект ServerSocket для того, чтобы получить сокет
         try(ServerSocket server = new ServerSocket(port)){
             while (!server.isClosed()){
-                //ставим сокет в режим прослушивания сети
                 Socket clientSocket = server.accept();
-                //если к сокету подключились, передаем работу в пул потоков
-                // через функциональный интерфейс runnable
                 poll.submit(() -> ConnectionHandling.handle(clientSocket));
-
             }
         }
         catch (NoSuchElementException e){
