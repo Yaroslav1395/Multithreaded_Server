@@ -6,9 +6,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class ConnectionHandling {
-    private static Map<Socket, PrintWriter> connectedSocketsWriters = new HashMap<>();
-    private static Map<Integer, String> clientPortsNames = new HashMap<>();
-    private static List<String> clientNames = new ArrayList<>(List.of("Bob", "Bill", "Mary"));
+    private static final Map<Socket, PrintWriter> connectedSocketsWriters = new HashMap<>();
+    private static final Map<Integer, String> clientPortsNames = new HashMap<>();
+    private static final List<String> clientNames = new ArrayList<>(List.of("Bob", "Bill", "Mary"));
 
 
 

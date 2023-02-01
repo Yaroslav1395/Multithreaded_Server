@@ -24,7 +24,7 @@ public enum Actions implements Executable{
     };
 
 
-    private String actionName;
+    private final String actionName;
 
     Actions(String actionName) {
         this.actionName = actionName;
